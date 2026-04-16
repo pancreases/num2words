@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 // Replace GA_MEASUREMENT_ID with your actual ID e.g. "G-XXXXXXXXXX"
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
@@ -61,6 +62,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <Analytics />
       </body>
     </html>
   );
