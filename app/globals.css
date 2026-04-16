@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0f0e0c;
+  --paper: #faf8f4;
+  --paper-dim: #f0ece4;
+  --accent: #c84b2f;
+  --accent-light: #f5e8e4;
+  --muted: #8a8378;
+  --border: #e0dbd2;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Syne', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  min-height: 100vh;
+}
+
+/* Number input — remove spinners */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Copy flash animation */
+@keyframes flash {
+  0% { background: var(--accent-light); }
+  100% { background: transparent; }
+}
+.flash {
+  animation: flash 0.4s ease-out;
+}
+
+/* Slide-up animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up {
+  animation: slideUp 0.22s ease-out both;
+}
+
+/* Tag pill */
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
